@@ -1,0 +1,678 @@
+
+/* =====================================
+   1. GENERAL STYLING
+===================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --purple: #a78bfa;
+    --dark-purple: #7c3aed;
+    --background: #0f1020;
+    --card-background: #191a30;
+    --section-background: #141529;
+    --white: #ffffff;
+    --text: #d1d1e0;
+    --muted: #999ab0;
+    --border: rgba(167, 139, 250, 0.16);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+html {
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: var(--background);
+    color: var(--white);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* =====================================
+   2. NAVIGATION BAR
+===================================== */
+
+header {
+    background: rgba(21, 21, 42, 0.94);
+    backdrop-filter: blur(12px);
+    padding: 18px 8%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Outfit', sans-serif;
+    font-size: 27px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: -0.5px;
+}
+
+.logo span {
+    color: var(--purple);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.nav-links a {
+    color: #d6d6e4;
+    font-size: 14px;
+    font-weight: 500;
+    position: relative;
+    transition: 0.3s ease;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+    width: 0;
+    height: 2px;
+    background-color: var(--purple);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--purple);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* =====================================
+   3. HOME / HERO SECTION
+===================================== */
+
+.home {
+    min-height: 88vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 75px 10%;
+    gap: 55px;
+
+    background:
+        radial-gradient(circle at 85% 30%, rgba(124, 58, 237, 0.12), transparent 30%),
+        var(--background);
+}
+
+.home-content {
+    flex: 1;
+    max-width: 650px;
+}
+
+.welcome {
+    display: inline-block;
+    color: var(--purple);
+    background: rgba(167, 139, 250, 0.10);
+    border: 1px solid var(--border);
+    letter-spacing: 2px;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 8px 17px;
+    border-radius: 30px;
+    margin-bottom: 22px;
+}
+
+.home-content h1 {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(40px, 5vw, 60px);
+    line-height: 1.15;
+    font-weight: 700;
+    letter-spacing: -1.5px;
+    margin-bottom: 16px;
+    color: var(--white);
+}
+
+.home-content h1 span {
+    color: var(--purple);
+}
+
+.home-content h2 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 23px;
+    font-weight: 500;
+    color: #c4b5fd;
+    margin-bottom: 20px;
+}
+
+.intro {
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.9;
+    max-width: 570px;
+    margin-bottom: 32px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 30px;
+    background: linear-gradient(120deg, var(--dark-purple), #9875ee);
+    color: var(--white);
+    border: 1px solid transparent;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.18);
+}
+
+.btn:hover {
+    background: transparent;
+    border-color: var(--purple);
+    color: var(--purple);
+    transform: translateY(-3px);
+}
+
+/* =====================================
+   4. PROFILE IMAGE
+===================================== */
+
+.home-image {
+    flex: 0 0 330px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-circle {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 5px solid var(--purple);
+    padding: 5px;
+    overflow: hidden;
+    background: var(--card-background);
+    box-shadow: 0 0 35px rgba(167, 139, 250, 0.18);
+    transition: 0.4s ease;
+}
+
+.image-circle:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 45px rgba(167, 139, 250, 0.3);
+}
+
+.image-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.floating-text {
+    position: absolute;
+    bottom: 12px;
+    right: -15px;
+    background: var(--card-background);
+    color: var(--purple);
+    padding: 11px 18px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* =====================================
+   5. COMMON SECTION STYLING
+===================================== */
+
+.section {
+    padding: 85px 10%;
+    text-align: center;
+}
+
+.section-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 45px;
+    letter-spacing: -0.5px;
+}
+
+.section-title span {
+    color: var(--purple);
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: var(--purple);
+    margin: 12px auto 0;
+    border-radius: 10px;
+}
+
+/* =====================================
+   6. ABOUT SECTION
+===================================== */
+
+.about-content {
+    max-width: 900px;
+    margin: auto;
+    padding: 35px 40px;
+    background: var(--card-background);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    color: var(--text);
+    line-height: 2;
+    text-align: left;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.about-content p {
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.about-content h3 {
+    font-family: 'Outfit', sans-serif;
+    color: var(--purple);
+    font-size: 21px;
+    margin: 22px 0 12px;
+}
+
+/* =====================================
+   7. SKILLS SECTION
+===================================== */
+
+.skills-section {
+    background: var(--section-background);
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 23px;
+}
+
+.skill-card {
+    background: var(--card-background);
+    padding: 30px 23px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+.skill-card h3 {
+    font-family: 'Outfit', sans-serif;
+    color: var(--purple);
+    font-size: 19px;
+    margin-bottom: 13px;
+}
+
+.skill-card p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.skill-card:hover {
+    border-color: var(--purple);
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(124, 58, 237, 0.12);
+}
+
+/* =====================================
+   8. PROJECTS SECTION
+===================================== */
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 23px;
+}
+
+.project-card {
+    background: var(--card-background);
+    padding: 30px 23px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+.project-card h3 {
+    font-family: 'Outfit', sans-serif;
+    color: var(--purple);
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 14px;
+}
+
+.project-card p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.9;
+    margin-bottom: 12px;
+}
+
+.project-card strong {
+    color: #c4b5fd;
+}
+
+.project-card:hover {
+    border-color: var(--purple);
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(124, 58, 237, 0.12);
+}
+
+/* =====================================
+   9. EDUCATION SECTION
+===================================== */
+
+#education .about-content h3 {
+    color: var(--purple);
+    margin-top: 18px;
+}
+
+#education .about-content p {
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border);
+}
+
+#education .about-content p:last-child {
+    border-bottom: none;
+}
+
+/* =====================================
+   10. CERTIFICATIONS SECTION
+===================================== */
+
+#certifications .about-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+#certifications .about-content p {
+    background: rgba(167, 139, 250, 0.06);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+    margin: 0;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+#certifications .about-content p:hover {
+    background: rgba(167, 139, 250, 0.12);
+    border-color: var(--purple);
+}
+
+/* =====================================
+   11. CONTACT SECTION
+===================================== */
+
+.contact-section {
+    background: var(--section-background);
+}
+
+.contact-description {
+    color: var(--muted);
+    font-size: 15px;
+    max-width: 650px;
+    margin: -15px auto 30px;
+}
+
+.contact-details {
+    max-width: 700px;
+    margin: auto;
+    padding: 30px;
+    background: var(--card-background);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    text-align: left;
+}
+
+.contact-details p {
+    color: var(--text);
+    font-size: 15px;
+    margin: 14px 0;
+    overflow-wrap: anywhere;
+}
+
+.contact-details strong {
+    color: var(--white);
+}
+
+.contact-details a {
+    color: var(--purple);
+    transition: 0.3s ease;
+}
+
+.contact-details a:hover {
+    color: #c4b5fd;
+    text-decoration: underline;
+}
+
+/* =====================================
+   12. FOOTER
+===================================== */
+
+footer {
+    text-align: center;
+    padding: 24px;
+    background: #090914;
+    color: #9999ad;
+    font-size: 13px;
+    border-top: 1px solid var(--border);
+}
+
+/* =====================================
+   13. TABLET RESPONSIVENESS
+===================================== */
+
+@media (max-width: 950px) {
+
+    header {
+        padding: 17px 5%;
+    }
+
+    .nav-links {
+        gap: 16px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
+    .home {
+        padding: 65px 6%;
+        gap: 30px;
+    }
+
+    .home-image {
+        flex-basis: 280px;
+    }
+
+    .image-circle {
+        width: 260px;
+        height: 260px;
+    }
+
+    .section {
+        padding: 70px 6%;
+    }
+
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .projects-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* =====================================
+   14. MOBILE RESPONSIVENESS
+===================================== */
+
+@media (max-width: 650px) {
+
+    header {
+        padding: 15px 5%;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px 16px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .home {
+        min-height: auto;
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 55px 6%;
+        gap: 35px;
+    }
+
+    .home-content {
+        max-width: 100%;
+    }
+
+    .home-content h1 {
+        font-size: 38px;
+    }
+
+    .home-content h2 {
+        font-size: 19px;
+    }
+
+    .intro {
+        font-size: 14px;
+    }
+
+    .home-image {
+        flex-basis: auto;
+        width: 100%;
+    }
+
+    .image-circle {
+        width: 220px;
+        height: 220px;
+    }
+
+    .floating-text {
+        right: 0;
+        bottom: 5px;
+        font-size: 11px;
+    }
+
+    .section {
+        padding: 60px 6%;
+    }
+
+    .section-title {
+        font-size: 29px;
+        margin-bottom: 35px;
+    }
+
+    .skills-container,
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+
+    .about-content {
+        padding: 23px;
+    }
+
+    #certifications .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-details {
+        padding: 23px;
+    }
+}
+
+/* =====================================
+   15. SMALL MOBILE DEVICES
+===================================== */
+
+@media (max-width: 400px) {
+
+    .home-content h1 {
+        font-size: 32px;
+    }
+
+    .home-content h2 {
+        font-size: 17px;
+    }
+
+    .image-circle {
+        width: 190px;
+        height: 190px;
+    }
+
+    .section-title {
+        font-size: 26px;
+    }
+
+    .nav-links {
+        gap: 9px 12px;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+    }
+
+    .skill-card,
+    .project-card {
+        padding: 23px 19px;
+    }
+}
