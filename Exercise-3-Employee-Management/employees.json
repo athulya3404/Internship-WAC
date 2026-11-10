@@ -1,0 +1,16 @@
+[
+    {
+        "emp_id": 301,
+        "name": "Alphy Ann Roy",
+        "age": 21,
+        "department": "CS",
+        "salary": 40000.0
+    },
+    {
+        "emp_id": 302,
+        "name": "Annliya Joshy",
+        "age": 30,
+        "department": "HR",
+        "salary": 20000.0
+    }
+]
